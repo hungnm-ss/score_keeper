@@ -1,6 +1,6 @@
-import 'package:base_flutter/app.dart';
-import 'package:base_flutter/screens/root/bloc/root_event.dart';
-import 'package:base_flutter/utils/bloc_observer.dart';
+import 'package:score_keeper/app.dart';
+import 'package:score_keeper/screens/root/bloc/root_event.dart';
+import 'package:score_keeper/utils/bloc_observer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

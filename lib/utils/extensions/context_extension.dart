@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:score_keeper/widgets/my_appbar.dart';
 
 import '../../widgets/dialog/custom_alert_dialog.dart';
 import '../theme_util.dart';
@@ -7,6 +8,9 @@ extension MediaQueryValues on BuildContext {
   double get statusBarHeight => MediaQuery.of(this).viewPadding.top;
 
   double get navigationBarHeight => MediaQuery.of(this).viewPadding.bottom;
+
+
+  double get appBarHeight => MyAppBar().preferredSize.height;
 
   MediaQueryData get mediaQuery => MediaQuery.of(this);
 

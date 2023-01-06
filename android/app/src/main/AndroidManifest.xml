@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.base_flutter">
+    package="com.example.score_keeper">
    <application
-        android:label="base_flutter"
+        android:label="Score Keeper"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

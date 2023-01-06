@@ -12,13 +12,13 @@ class MyBlocObserver extends BlocObserver {
   @override
   void onTransition(Bloc bloc, Transition transition) {
     super.onTransition(bloc, transition);
-    LoggerUtil.logInfo('onTransition: ${transition.toString()}',
+    LoggerUtil.log('onTransition: ${transition.toString()}',
         tag: '${bloc.runtimeType}');
   }
 
   @override
   void onError(BlocBase bloc, Object error, StackTrace stackTrace) {
-    LoggerUtil.logError('onError: ${error.toString()}',
+    LoggerUtil.log('onError: ${error.toString()}',
         tag: '${bloc.runtimeType}');
     super.onError(bloc, error, stackTrace);
   }

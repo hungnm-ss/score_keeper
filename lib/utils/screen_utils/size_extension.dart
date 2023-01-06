@@ -1,6 +1,6 @@
 import 'dart:math';
 
-import 'package:base_flutter/utils/screen_utils/screen_utils.dart';
+import 'package:score_keeper/utils/screen_utils/screen_utils.dart';
 import 'package:flutter/material.dart';
 
 extension SizeExtension on num {

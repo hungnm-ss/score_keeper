@@ -1,5 +1,5 @@
-import 'package:base_flutter/utils/screen_utils/size_extension.dart';
-import 'package:base_flutter/utils/theme_util.dart';
+import 'package:score_keeper/utils/screen_utils/size_extension.dart';
+import 'package:score_keeper/utils/theme_util.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -46,7 +46,7 @@ TextStyle s({
   FontWeight? fontWeight,
   double? height,
 }) {
-  return GoogleFonts.montserrat(
+  return GoogleFonts.kanit(
       textStyle: TextStyle(
           color: color ?? Colors.white,
           fontSize: (fontSize ?? 14).sp,

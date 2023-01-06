@@ -1,6 +1,5 @@
-import 'package:base_flutter/screens/root/bloc/root_state.dart';
-import 'package:base_flutter/screens/main_screen/main_screen.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:score_keeper/screens/root/bloc/root_state.dart';
+import 'package:score_keeper/screens/main_screen/main_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

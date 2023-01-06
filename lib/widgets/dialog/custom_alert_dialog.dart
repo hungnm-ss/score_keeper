@@ -1,5 +1,5 @@
-import 'package:base_flutter/utils/styles.dart';
-import 'package:base_flutter/widgets/button/default_button.dart';
+import 'package:score_keeper/utils/styles.dart';
+import 'package:score_keeper/widgets/button/default_button.dart';
 import 'package:flutter/material.dart';
 
 

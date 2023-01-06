@@ -1,17 +1,13 @@
-import 'package:base_flutter/screens/main_screen/bloc/main_event.dart';
-import 'package:base_flutter/screens/main_screen/bloc/main_state.dart';
-import 'package:base_flutter/screens/home/home_screen.dart';
-import 'package:base_flutter/screens/user/user_screen.dart';
-import 'package:base_flutter/widgets/my_drawer.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:score_keeper/screens/dice/dice_screen.dart';
+import 'package:score_keeper/screens/main_screen/bloc/main_event.dart';
+import 'package:score_keeper/screens/main_screen/bloc/main_state.dart';
+import 'package:score_keeper/screens/home/score_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
-import '../../utils/color_util.dart';
-import '../../widgets/my_appbar.dart';
+import 'package:score_keeper/utils/styles.dart';
 import 'bloc/main_bloc.dart';
 
-enum TabItem { home, user }
+enum TabItem { score, dice }
 
 class MainScreen extends StatefulWidget {
   const MainScreen({Key? key}) : super(key: key);
@@ -46,8 +42,6 @@ class _MainScreenState extends State<MainScreen> {
 
   Widget _builder(BuildContext context, state) {
     return Scaffold(
-      drawer: const MyDrawer(),
-      appBar: _buildAppBar(),
       bottomNavigationBar: _buildBottomNavigationBar(),
       body: IndexedStack(
         index: state is MainTabChanged ? state.index : 0,
@@ -64,15 +58,14 @@ class _MainScreenState extends State<MainScreen> {
           onTap: _onItemTapped,
           items: _bottomTabItems(),
           currentIndex: state is MainTabChanged ? state.index : 0,
-          type: BottomNavigationBarType.fixed,
-          backgroundColor: ColorUtil.backgroundSecondary,
-          elevation: 1.0,
-          selectedItemColor: ColorUtil.primary,
-          unselectedItemColor: const Color(0xFF828282),
+          backgroundColor: Colors.black,
+          elevation: 6.0,
+          landscapeLayout: BottomNavigationBarLandscapeLayout.linear,
+          selectedItemColor: Colors.greenAccent,
+          unselectedItemColor: Colors.white60,
+          selectedLabelStyle: s(color: Colors.greenAccent),
           showSelectedLabels: true,
-          showUnselectedLabels: true,
-          unselectedFontSize: 12.0,
-          selectedFontSize: 12.0,
+          showUnselectedLabels: false,
         );
       },
     );
@@ -81,15 +74,13 @@ class _MainScreenState extends State<MainScreen> {
   List<BottomNavigationBarItem> _bottomTabItems() {
     return [
       const BottomNavigationBarItem(
-          label: 'Home',
-          tooltip: "Home",
-          icon: Icon(Icons.home, color: Colors.white),
-          activeIcon: Icon(Icons.home)),
+          label: 'Score',
+          icon: Icon(Icons.scoreboard_outlined),
+          activeIcon: Icon(Icons.scoreboard_outlined)),
       const BottomNavigationBarItem(
-          label: 'User',
-          tooltip: "User",
-          icon: Icon(Icons.person, color: Colors.white),
-          activeIcon: Icon(Icons.person))
+          label: 'Dice',
+          icon: Icon(Icons.casino_outlined),
+          activeIcon: Icon(Icons.casino_outlined))
     ];
   }
 
@@ -99,18 +90,8 @@ class _MainScreenState extends State<MainScreen> {
 
   List<Widget> _getTabs() {
     return [
-      const HomeScreen(),
-      const UserScreen(),
+      const ScoreScreen(),
+      const DiceScreen(),
     ];
-  }
-
-  _buildAppBar() {
-    return MyAppBar(actionWidgets: [
-      IconButton(
-        tooltip: "?",
-        icon: const Icon(Icons.question_mark),
-        onPressed: () {},
-      ),
-    ]);
   }
 }

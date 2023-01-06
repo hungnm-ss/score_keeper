@@ -1,9 +1,9 @@
-import 'package:base_flutter/screens/home/bloc/home_bloc.dart';
-import 'package:base_flutter/screens/user/bloc/user_bloc.dart';
-import 'package:base_flutter/routes.dart';
-import 'package:base_flutter/screens/main_screen/bloc/main_bloc.dart';
-import 'package:base_flutter/services/navigation_service.dart';
-import 'package:base_flutter/utils/theme_util.dart';
+import 'package:score_keeper/screens/dice/bloc/dice_bloc.dart';
+import 'package:score_keeper/routes.dart';
+import 'package:score_keeper/screens/home/bloc/score_bloc.dart';
+import 'package:score_keeper/screens/main_screen/bloc/main_bloc.dart';
+import 'package:score_keeper/services/navigation_service.dart';
+import 'package:score_keeper/utils/theme_util.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -37,8 +37,8 @@ class App extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider<MainBloc>(create: (context) => MainBloc()),
-        BlocProvider<HomeBloc>(create: (context) => HomeBloc()),
-        BlocProvider<UserBloc>(create: (context) => UserBloc()),
+        BlocProvider<ScoreBloc>(create: (context) => ScoreBloc()),
+        BlocProvider<DiceBloc>(create: (context) => DiceBloc()),
       ],
       child: child,
     );
